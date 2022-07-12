@@ -1,129 +1,179 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+import random
 
-# C extensions
-*.so
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+plainText = open('text2.txt', 'r')
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+ogdict = [
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+    'A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f', 'G', 'g', 'H',
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+    'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'O', 'o',
 
-# Translations
-*.mo
-*.pot
+    'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W',
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+    'w', 'X', 'x', 'Y', 'y', 'Z', 'z', '1', '2', '3', '4', '5', '6', '7', '8',
 
-# Flask stuff:
-instance/
-.webassets-cache
+    '9', '0', ' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_',
 
-# Scrapy stuff:
-.scrapy
+    '+', '=', '{', '}', '[', ']', '|', ':', ';', '"', '<', ',', '.', '>', '?',
 
-# Sphinx documentation
-docs/_build/
+    '\n', '\t', '\'', '\r', '\v', '\f', '–', '’', 'ł', 'í', '¿', 'é'
 
-# PyBuilder
-target/
+]
 
-# Jupyter Notebook
-.ipynb_checkpoints
 
-# IPython
-profile_default/
-ipython_config.py
 
-# pyenv
-.python-version
+def encrypt2(plainText):
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+    encryption = " "
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
+    f = open('encryption2.txt', 'w')
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+    for line in plainText:
 
-# SageMath parsed files
-*.sage.py
+        for a in line:
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+            cindex = ogdict.index(a)
 
-# Spyder project settings
-.spyderproject
-.spyproject
+            if cindex is not False:
 
-# Rope project settings
-.ropeproject
+                cindex = ogdict.index(a)
 
-# mkdocs documentation
-/site
+                encryption = encryption + newdict[cindex]
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+                #ogdict index value = newdict position
 
-# Pyre type checker
-.pyre/
+                #write newdict[#]
+
+            elif cindex is not True:
+
+                a = str(a)
+
+                ogdict.extend(a)
+
+                cindex = ogdict.index(a)
+
+                encryption = encryption + ogdict[cindex]  #if not in ogdict
+
+        w = f.write(encryption)
+
+    #print(y,'little monkeys jumping off the bed')
+
+    f.close
+
+
+
+plainText.close
+
+ogdict = [
+
+    'A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f', 'G', 'g', 'H',
+
+    'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'O', 'o',
+
+    'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W',
+
+    'w', 'X', 'x', 'Y', 'y', 'Z', 'z', '1', '2', '3', '4', '5', '6', '7', '8',
+
+    '9', '0', ' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_',
+
+    '+', '=', '{', '}', '[', ']', '|', ':', ';', '"', '<', ',', '.', '>', '?',
+
+    '\n', '\t', '\'', '\r', '\v', '\f', '–', '’', 'ł', 'í', '¿', 'é'
+
+]
+
+
+x = len(ogdict)
+
+y = random.randrange(0, x)
+
+newdict = ogdict[y:] + ogdict[:y]
+
+#print(newdict)
+
+newdict2 = newdict[-y:] + newdict[:-y]
+
+#print(newdict2)
+
+#print (x)
+
+#print(y)
+
+z = str(y)
+
+zin = 0
+
+#decryption measure
+
+encrypt2(plainText)
+
+
+for line in z:
+
+    for num in line:
+
+        f2 = open('encryption2.txt', 'a')
+
+        axe = []
+
+        if num == '1':
+
+            axe += 'AA'
+
+
+        elif num == '2':
+
+            axe += 'AB'
+
+
+        elif num == '3':
+
+            axe += 'AT'
+
+
+        elif num == '4':
+
+            axe += 'AC'
+
+
+        elif num == '5':
+
+            axe += 'AD'
+
+
+        elif num == '6':
+
+            axe += 'AE'
+
+
+        elif num == '7':
+
+            axe += 'AG'
+
+
+        elif num == '8':
+
+            axe += 'AF'
+
+        elif num == '9':
+
+            axe += 'AU'
+
+        else:
+
+            axe += 'AP'
+
+
+    h = '\n'
+
+    f2.write(h)
+
+    g = '\n'.join(map(str, axe))
+
+    f2.write(g)
+
+    f2.close()
+
+
+Written using the “repl.it” Python 3 IDE.
